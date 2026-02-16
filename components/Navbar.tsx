@@ -28,11 +28,15 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-12 text-sm font-bold uppercase tracking-[0.2em] text-slate-600">
           <a href="#o-mnie" className="hover:text-primary transition-all relative group/link">
-            Rozdział I
+            O mnie
+            <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
+          </a>
+          <a href="#komu-pomagam" className="hover:text-primary transition-all relative group/link">
+            Pacjenci
             <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
           </a>
           <a href="#doswiadczenie" className="hover:text-primary transition-all relative group/link">
-            Wiedza
+            Metody
             <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
           </a>
           <a href="#historie" className="hover:text-primary transition-all relative group/link">
@@ -40,11 +44,11 @@ const Navbar: React.FC = () => {
             <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-primary transition-all group-hover/link:w-full"></span>
           </a>
           <a href="#kontakt" className="bg-white border border-slate-200 shadow-sm px-8 py-3 rounded-full hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
-            Rozpocznij Podróż
+            Umów wizytę
           </a>
         </div>
 
-        {/* Mobile Menu Icon (Simple placeholder) */}
+        {/* Mobile Menu Icon */}
         <button className="lg:hidden text-slate-800 p-2">
           <span className="material-symbols-outlined text-3xl">menu</span>
         </button>

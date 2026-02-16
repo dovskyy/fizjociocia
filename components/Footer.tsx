@@ -13,14 +13,15 @@ const Footer: React.FC = () => {
 
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-bold uppercase tracking-widest text-slate-400">
             <a href="#hero" className="hover:text-primary transition-colors">Początek</a>
-            <a href="#o-mnie" className="hover:text-primary transition-colors">O nas</a>
+            <a href="#o-mnie" className="hover:text-primary transition-colors">O mnie</a>
+            <a href="#komu-pomagam" className="hover:text-primary transition-colors">Pacjenci</a>
+            <a href="#doswiadczenie" className="hover:text-primary transition-colors">Metody</a>
             <a href="#kontakt" className="hover:text-primary transition-colors">Kontakt</a>
           </div>
         </div>
 
         <div className="mt-20 text-center text-slate-300 text-xs font-light tracking-[0.2em] leading-loose">
-          © 2024 MGR MARCELINA KOCHANOWSKA - FIZJOCIOCIA<br />
-
+          &copy; 2026 MGR MARCELINA KOCHANOWSKA - FIZJOCIOCIA<br />
         </div>
       </div>
     </footer>
