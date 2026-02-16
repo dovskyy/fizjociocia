@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl" class="light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Journey of Growth | Fizjociocia - Marcelina Kochanowska</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ffcccb",
+              "pastel-mint": "#b9f2e1",
+              "pastel-yellow": "#fef3c7",
+              "pastel-blue": "#bae6fd",
+              "soft-beige": "#fdfaf6",
+              "background-light": "#f8f5f5"
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["Plus Jakarta Sans", "sans-serif"],
+              handwritten: ["Gaegu", "cursive"]
+            },
+            animation: {
+              'blob': 'blob 7s infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- Custom CSS Utilities -->
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .scribble-border {
+          border-radius: 45% 55% 70% 30% / 30% 60% 40% 70%;
+        }
+        .scribble-border-rev {
+          border-radius: 65% 35% 40% 60% / 50% 30% 70% 50%;
+        }
+        .floating-slow {
+          animation: float 12s ease-in-out infinite;
+        }
+        .floating-fast {
+          animation: float 8s ease-in-out infinite;
+        }
+        @keyframes float {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          33% { transform: translate(15px, -25px) rotate(2deg); }
+          66% { transform: translate(-10px, 15px) rotate(-2deg); }
+        }
+        .text-outline {
+          -webkit-text-stroke: 1px currentColor;
+          color: transparent;
+        }
+        .balloon-dot {
+          @apply absolute -top-4 -right-1 w-4 h-5 bg-primary rounded-full;
+          border-bottom-right-radius: 45%;
+          border-bottom-left-radius: 45%;
+        }
+        .paper-texture {
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #fdfaf6;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #ffcccb;
+          border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #ffb3b3;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="font-body bg-soft-beige text-slate-800 overflow-x-hidden paper-texture antialiased">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
