@@ -10,16 +10,12 @@ const Hero: React.FC = () => {
 
       <div className="container mx-auto px-6 relative z-10 h-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center h-full">
-          
+
           {/* Text Content */}
           <div className="lg:col-span-5 order-2 lg:order-1 relative z-20 pt-10 lg:pt-0">
             <div className="relative">
-              <div className="absolute -left-16 -top-16 font-handwritten text-6xl text-pastel-blue/40 transform -rotate-12 select-none pointer-events-none z-0">
-                magic
-              </div>
-              <span className="font-handwritten text-3xl text-primary block mb-6 italic relative z-10">
-                Każdy ruch to słowo...
-              </span>
+
+
               <h1 className="text-[13vw] lg:text-[7.5vw] font-display font-bold leading-[0.85] tracking-tighter text-slate-900 mb-8 relative z-10">
                 Wspólny <br />
                 <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-primary to-pastel-yellow font-normal pr-4">
@@ -30,7 +26,7 @@ const Hero: React.FC = () => {
               <p className="text-lg lg:text-xl leading-relaxed text-slate-600 font-light mb-12 max-w-md relative z-10">
                 W świecie Fizjocioci nie mierzymy postępów w centymetrach, lecz w pewności siebie i uśmiechu. Tworzymy przestrzeń, gdzie nauka ruchu staje się przygodą.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-center relative z-10">
                 <a href="#kontakt" className="group relative py-5 px-10 inline-block">
                   <span className="absolute inset-0 bg-slate-900 scribble-border transform rotate-2 group-hover:rotate-1 transition-transform duration-300 shadow-lg group-hover:shadow-primary/50"></span>
@@ -53,32 +49,27 @@ const Hero: React.FC = () => {
               <div className="absolute top-10 right-10 w-full h-full border-[3px] border-slate-900/10 scribble-border-rev transform rotate-3 scale-95 z-0 floating-slow"></div>
               <div className="absolute -top-5 -left-5 w-32 h-32 bg-pastel-yellow rounded-full blur-2xl opacity-60 z-0"></div>
               <div className="absolute bottom-10 right-0 w-48 h-48 bg-pastel-mint rounded-full blur-3xl opacity-50 z-0"></div>
-              
+
               {/* Main Image Container */}
               <div className="relative w-full h-full z-10 group">
                 <div className="absolute inset-0 bg-white scribble-border transform -rotate-2 scale-[1.02] shadow-2xl z-0 transition-transform duration-700 group-hover:rotate-0 group-hover:scale-[1.03]"></div>
                 <div className="absolute inset-2 overflow-hidden scribble-border z-10 bg-gray-100">
-                  <img 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDCdlJ4Jax2oNtUgBpqIGww938h45UCmZSbrRZod7ZWqkPDu7nIRKGEV6oVFXgCe1DPFDqPqndmIBxfYcCAdlEUprrPzRZTVOOYkGtVt5ECy1PTIHutBZi2ZwLc9FE9icXBAzZJ5MrXq5NPpjE5PxMg4B_ejJU66iXT4aWO0EoyIZdbkNmgd5qAs8J0IHtbEmftWsny_6uHr7UqaKR2nLdGML40km-KKNqH7L_GtqypQ6HRkeouh7oyh23KpU7NFeGdqM_ie-dWn0" 
-                    alt="Marcelina Kochanowska - Fizjociocia" 
-                    className="w-full h-full object-cover object-center shadow-inner transition-transform duration-1000 group-hover:scale-105" 
+                  <img
+                    src="/assets/fizjociocia_hero_3.webp"
+                    alt="Marcelina Kochanowska - Fizjociocia"
+                    className="w-full h-full object-cover object-center shadow-inner transition-transform duration-1000 group-hover:scale-105"
                   />
                 </div>
-                
+
                 {/* Floating Badge */}
-                <div className="absolute -bottom-8 -left-8 lg:-left-12 bg-white p-6 rounded-full shadow-xl z-20 floating-fast transform rotate-6 border border-slate-100">
-                  <div className="flex flex-col items-center justify-center w-24 h-24 lg:w-32 lg:h-32 rounded-full border-2 border-dashed border-primary bg-soft-beige">
-                    <span className="material-symbols-outlined text-4xl text-primary mb-1">favorite</span>
-                    <span className="font-handwritten text-sm lg:text-lg font-bold text-slate-600">Z Sercem</span>
-                  </div>
-                </div>
+
 
                 {/* Hand-drawn arrow SVG */}
                 <div className="absolute -top-12 -right-12 z-20 pointer-events-none hidden lg:block">
                   <svg className="w-40 h-40 text-slate-800 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                     <path d="M40,160 Q80,60 160,40" strokeLinecap="round" strokeWidth="2"></path>
                     <path d="M150,50 L160,40 L155,60" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"></path>
-                    <text className="font-handwritten text-xl" fill="currentColor" stroke="none" transform="rotate(-15 120 40)" x="120" y="40">Cześć!</text>
+
                   </svg>
                 </div>
               </div>
@@ -86,12 +77,9 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex flex-col items-center gap-2 opacity-60">
-        <span className="text-[10px] uppercase tracking-[0.3em] font-bold">Odkrywaj</span>
-        <div className="w-px h-16 bg-gradient-to-b from-slate-800 to-transparent"></div>
-      </div>
+
     </section>
   );
 };
