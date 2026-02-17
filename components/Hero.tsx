@@ -14,16 +14,12 @@ const Hero: React.FC = () => {
           {/* Text Content */}
           <div className="order-2 lg:order-1 relative z-20">
             <div className="relative">
-              <p className="text-sm font-semibold tracking-[0.25em] uppercase text-primary/70 mb-4">
-                Fizjoterapia dziecięca
-              </p>
-
               <h1 className="font-display font-bold leading-[0.9] tracking-tight text-slate-900 mb-6 relative z-10">
-                <span className="block text-[10vw] lg:text-[3.8vw] font-extrabold">Marcelina</span>
-                <span className="block text-[10vw] lg:text-[3.8vw] font-extrabold">Kochanowska</span>
-                <span className="block mt-3 text-[8vw] lg:text-[3vw] italic font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-primary to-pastel-yellow pb-3">
+                  <span className="block mt-3 text-[8vw] lg:text-[3vw] italic font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-primary to-pastel-yellow pb-3">
                   Fizjociocia
                 </span>
+                  <span className="block text-[10vw] lg:text-[3.8vw] font-extrabold">Marcelina</span>
+                  <span className="block text-[10vw] lg:text-[3.8vw] font-extrabold">Kochanowska</span>
               </h1>
 
               <p className="text-base lg:text-lg leading-relaxed text-slate-600 font-light mb-10 max-w-md relative z-10">
@@ -43,8 +39,8 @@ const Hero: React.FC = () => {
                     mgr fizjoterapii
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-px bg-primary/50"></span>
-                    <span className="text-primary/80">NDT-Bobath</span>
+                    <span className="w-8 h-px bg-slate-300"></span>
+                    NDT-Bobath
                   </div>
                 </div>
               </div>

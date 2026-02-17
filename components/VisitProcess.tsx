@@ -3,70 +3,113 @@ import React from 'react';
 const steps = [
   {
     number: '01',
-    title: 'Konsultacja wstępna',
-    description: 'Szczegółowy wywiad z rodzicem dotyczący przebiegu ciąży, porodu, rozwoju dziecka oraz aktualnych trudności.',
+    title: 'Konsultacja',
+    description: 'Szczegółowy wywiad i analiza historii rozwoju maluszka.',
     icon: 'forum',
-    numberClass: 'text-primary/30',
-    bgClass: 'bg-primary/10',
-    iconClass: 'text-primary',
+    color: 'bg-primary/20',
+    text: 'text-primary-600',
+    border: 'border-primary/20'
   },
   {
     number: '02',
-    title: 'Ocena funkcjonalna',
-    description: 'Ocena napięcia mięśniowego, analiza wzorców ruchowych, kontrola posturalna oraz badanie integracji sensorycznej.',
+    title: 'Ocena',
+    description: 'Badanie napięcia i wzorców ruchowych w formie zabawy.',
     icon: 'search',
-    numberClass: 'text-emerald-400/30',
-    bgClass: 'bg-emerald-400/10',
-    iconClass: 'text-emerald-400',
+    color: 'bg-emerald-100',
+    text: 'text-emerald-600',
+    border: 'border-emerald-200'
   },
   {
     number: '03',
-    title: 'Plan terapii',
-    description: 'Indywidualny program dopasowany do wieku, poziomu rozwoju, potrzeb funkcjonalnych i celów rodziny.',
+    title: 'Plan',
+    description: 'Ustalenie celów i instruktaż pielęgnacyjny dla rodziców.',
     icon: 'edit_note',
-    numberClass: 'text-yellow-500/30',
-    bgClass: 'bg-yellow-500/10',
-    iconClass: 'text-yellow-500',
+    color: 'bg-amber-100',
+    text: 'text-amber-600',
+    border: 'border-amber-200'
   },
   {
     number: '04',
-    title: 'Terapia i monitorowanie',
-    description: 'Regularna ocena efektów oraz modyfikacja programu w zależności od postępów dziecka.',
-    icon: 'trending_up',
-    numberClass: 'text-primary/30',
-    bgClass: 'bg-primary/10',
-    iconClass: 'text-primary',
+    title: 'Terapia',
+    description: 'Regularna praca i dostosowywanie ćwiczeń do postępów.',
+    icon: 'favorite',
+    color: 'bg-sky-100',
+    text: 'text-sky-600',
+    border: 'border-sky-200'
   },
 ];
 
 const VisitProcess: React.FC = () => {
   return (
-    <section id="wizyta" className="py-40 bg-white/30">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="wizyta" className="py-24 bg-soft-beige/50 relative overflow-hidden paper-texture">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Header */}
         <div className="text-center mb-24">
-          <span className="text-xs font-bold tracking-[0.3em] text-emerald-500 uppercase mb-6 block">Przebieg wizyty</span>
-          <h2 className="text-7xl font-display font-bold leading-none mb-8">
-            Jak <span className="italic text-primary">pracuję?</span>
+          <span className="inline-block py-1 px-3 rounded-full bg-white border border-slate-200 text-xs font-bold tracking-[0.2em] text-slate-500 uppercase mb-4 shadow-sm">
+            Proces współpracy
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-800 mb-6">
+            Twoja ścieżka do <span className="text-primary italic relative">spokoju</span>
           </h2>
-          <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto">
-            Każda terapia zaczyna się od zrozumienia. Nie szukam skrótów — buduję bezpieczną, przemyślaną ścieżkę rozwoju.
+          <p className="text-lg text-slate-500 font-light max-w-2xl mx-auto">
+            Uporządkowany plan działania, który daje poczucie bezpieczeństwa.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <div key={index} className="relative group">
-              <div className="bg-white p-10 scribble-border shadow-sm hover:shadow-xl transition-all duration-300 group-hover:-translate-y-2 h-full">
-                <span className={`font-handwritten text-5xl ${step.numberClass} block mb-4`}>{step.number}</span>
-                <div className={`w-14 h-14 rounded-2xl ${step.bgClass} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  <span className={`material-symbols-outlined text-2xl ${step.iconClass}`}>{step.icon}</span>
+        {/* Timeline Container */}
+        <div className="relative">
+          
+          {/* Connector Line (Desktop) */}
+          <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-slate-200 -z-10"></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center text-center group">
+                
+                {/* Number Badge (The "Station") */}
+                <div className={`
+                  w-24 h-24 rounded-full bg-white border-4 ${step.border} 
+                  flex items-center justify-center mb-8 relative
+                  shadow-sm group-hover:scale-110 transition-transform duration-300
+                  z-10
+                `}>
+                   <div className={`
+                     w-20 h-20 rounded-full ${step.color} 
+                     flex items-center justify-center
+                   `}>
+                      <span className={`font-handwritten text-3xl font-bold ${step.text}`}>
+                        {step.number}
+                      </span>
+                   </div>
+                   
+                   {/* Tiny dot connector to line */}
+                   <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -left-4 w-4 h-0.5 bg-slate-200 -z-20"></div>
+                   <div className="hidden md:block absolute top-1/2 -translate-y-1/2 -right-4 w-4 h-0.5 bg-slate-200 -z-20"></div>
                 </div>
-                <h3 className="text-2xl font-display font-bold mb-4">{step.title}</h3>
-                <p className="text-slate-500 font-light leading-relaxed">{step.description}</p>
+
+                {/* Content Card */}
+                <div className="
+                  bg-white p-6 rounded-3xl border border-slate-100 shadow-sm
+                  w-full h-full hover:shadow-md transition-shadow duration-300
+                  flex flex-col items-center
+                ">
+                  <span className={`material-symbols-outlined text-4xl mb-4 ${step.text} opacity-80`}>
+                    {step.icon}
+                  </span>
+                  <h3 className="text-xl font-display font-bold text-slate-800 mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

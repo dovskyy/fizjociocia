@@ -2,18 +2,23 @@ import React from 'react';
 
 const Services: React.FC = () => {
   return (
-    <section id="doswiadczenie" className="py-24 bg-white/30">
+    <section id="doswiadczenie" className="py-24 relative overflow-hidden">
+      <div className="absolute inset-0 bg-primary/5 -z-10"></div>
+      <div
+        className="absolute inset-0 -z-[5] opacity-[0.2] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/assets/fizjociocia_bg_4.webp')" }}
+      ></div>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
         <div className="mb-14">
-          <span className="text-xs font-bold tracking-[0.3em] text-slate-800 uppercase mb-4 block">Metody terapii</span>
+          <span className="text-xs font-bold tracking-[0.3em] text-slate-800 uppercase block">Metody terapii</span>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-7">
-            <h2 className="text-5xl lg:text-6xl font-display font-bold leading-none">
-              Narzędzia <span className="text-outline">Wsparcia.</span>
+            <h2 className="text-5xl lg:text-6xl font-display font-bold leading-none mb-2">
+              Narzędzia <span>wsparcia</span>
             </h2>
             <p className="max-w-sm text-slate-600 text-base border-l-2 border-primary pl-6 py-1 italic">
-              Nieustanna nauka to mój sposób na zapewnienie Twojemu dziecku bezpieczeństwa, na jakie zasługuje.
+              Nieustanna nauka to mój sposób na zapewnienie Twojemu dziecku bezpieczeństwa i komfortu, na jakie zasługuje.
             </p>
           </div>
         </div>

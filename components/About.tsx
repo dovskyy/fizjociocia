@@ -2,7 +2,12 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section id="o-mnie" className="py-40 relative">
+    <section id="o-mnie" className="py-40 relative overflow-hidden">
+      <div className="absolute inset-0 bg-primary/5 -z-10"></div>
+      <div
+        className="absolute inset-0 -z-[5] opacity-[0.2] bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/assets/fizjociocia_bg.webp')" }}
+      ></div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-12 gap-4 items-center">
 
@@ -24,7 +29,9 @@ const About: React.FC = () => {
             </h2>
             <div className="space-y-8 text-lg text-slate-600 font-light">
               <p>
-                Jestem fizjoterapeutką pediatryczną, specjalizującą się w terapii dzieci z zaburzeniami neurologicznymi oraz rozwojowymi. Pracuję w oparciu o aktualną wiedzę medyczną, standaryzowane narzędzia diagnostyczne oraz indywidualnie dopasowane programy terapeutyczne.
+                  Wspieram małych odkrywców w ich codziennych wyzwaniach.
+                  Pomagam wszystkim dzieciom, również tym z trudnościami rozwojowymi i neurologicznymi - rozwijać sprawność, samodzielność i pewność siebie.
+                  Łączę wiedzę medyczną z uważnością i indywidualnym podejściem, bo każde dziecko zasługuje na opiekę dostosowaną do jego potrzeb.
               </p>
             </div>
 
