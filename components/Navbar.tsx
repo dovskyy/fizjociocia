@@ -19,10 +19,14 @@ const Navbar: React.FC = () => {
       }`}>
       <div className={`mx-auto px-6 md:px-8 flex justify-between items-center transition-all duration-500 ease-in-out ${isScrolled ? 'max-w-[1200px]' : 'max-w-[1800px]'
         }`}>
-        <a href="#hero" className="group">
-          <span className="text-3xl md:text-4xl font-handwritten font-bold flex items-center tracking-tighter text-slate-900">
-            Fizjoc<span className="relative">i<span className="balloon-dot bg-pastel-mint"></span></span>ocia
-          </span>
+        <a href="#hero" className="group flex items-center">
+          <img
+            src="/assets/fizjociocia_logo.webp"
+            alt="Fizjociocia"
+            className={`transition-all duration-500 ease-in-out ${
+              isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-14'
+            }`}
+          />
         </a>
 
         {/* Desktop Menu */}

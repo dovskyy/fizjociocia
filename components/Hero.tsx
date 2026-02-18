@@ -8,6 +8,15 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-primary/15 rounded-full blur-[120px] mix-blend-multiply animate-blob animation-delay-2000"></div>
       <div className="absolute -bottom-20 left-1/2 w-[50vw] h-[50vw] bg-pastel-mint/15 rounded-full blur-[120px] mix-blend-multiply animate-blob animation-delay-4000 transform -translate-x-1/2"></div>
 
+      {/* Balloons decoration — odkomentuj żeby aktywować:
+      <img
+        src="/assets/baloons.webp"
+        alt=""
+        aria-hidden="true"
+        className="absolute -top-6 right-0 w-64 lg:w-80 opacity-60 floating-slow pointer-events-none select-none z-0"
+      />
+      */}
+
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 

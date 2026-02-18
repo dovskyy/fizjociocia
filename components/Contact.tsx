@@ -9,10 +9,18 @@ const Contact: React.FC = () => {
   return (
     <section id="kontakt" className="py-24 relative overflow-hidden bg-slate-50">
       <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]"></div>
-      
+
       <div className="max-w-5xl mx-auto px-4 relative">
+        {/* Balloons decoration - peek above the card */}
+        <img
+          src="/assets/baloons.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute left-1/2 -translate-x-1/2 -top-20 w-80 lg:w-96 opacity-60 floating-slow pointer-events-none select-none z-0"
+        />
+
         {/* Envelope/Postcard Container */}
-        <div className="bg-white rounded-sm shadow-2xl overflow-hidden relative transform rotate-1 border border-slate-200">
+        <div className="bg-white rounded-sm shadow-2xl overflow-hidden relative transform rotate-1 border border-slate-200 z-10">
             {/* Stamp / Decorative Top Bar */}
             <div className="h-2 bg-gradient-to-r from-red-300 via-blue-300 to-red-300 opacity-50 bg-[length:40px_100%]"></div>
             

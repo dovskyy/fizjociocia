@@ -6,9 +6,11 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-12">
           <div className="flex items-center gap-2">
-            <span className="text-4xl font-handwritten font-bold flex items-center tracking-tighter text-slate-900">
-              Fizjoc<span className="relative">i<span className="balloon-dot"></span></span>ocia
-            </span>
+            <img
+              src="/assets/fizjociocia_logo.webp"
+              alt="Fizjociocia"
+              className="h-12 md:h-14"
+            />
           </div>
 
           <div className="flex flex-wrap justify-center gap-8 md:gap-12 text-sm font-bold uppercase tracking-widest text-slate-400">
