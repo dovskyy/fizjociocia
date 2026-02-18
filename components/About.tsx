@@ -37,28 +37,22 @@ const About: React.FC = () => {
 
             {/* Credentials */}
             <div className="mt-12 flex flex-col gap-6">
-              <div className="flex items-center gap-6 group">
-                <div className="w-16 h-16 rounded-full bg-pastel-mint flex items-center justify-center text-emerald-600 transition-transform group-hover:scale-110">
-                  <span className="material-symbols-outlined text-3xl">school</span>
-                </div>
+              <div className="flex items-center gap-5 group">
+                <div className="shrink-0 w-5 h-5 rounded-full bg-pastel-blue ring-2 ring-pastel-blue ring-offset-4 ring-offset-white shadow-sm transition-transform group-hover:scale-110"></div>
                 <div>
                   <h4 className="font-bold uppercase tracking-widest text-xs mb-1">Wykształcenie</h4>
                   <p className="text-slate-500 italic">Magister Fizjoterapii — AWF Poznań</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6 group">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary transition-transform group-hover:scale-110">
-                  <span className="material-symbols-outlined text-3xl">neurology</span>
-                </div>
+              <div className="flex items-center gap-5 group">
+                <div className="shrink-0 w-5 h-5 rounded-full bg-primary ring-2 ring-primary ring-offset-4 ring-offset-white shadow-sm transition-transform group-hover:scale-110"></div>
                 <div>
                   <h4 className="font-bold uppercase tracking-widest text-xs mb-1">Certyfikacja</h4>
                   <p className="text-slate-500 italic">Terapeuta NDT-Bobath</p>
                 </div>
               </div>
-              <div className="flex items-center gap-6 group">
-                <div className="w-16 h-16 rounded-full bg-pastel-yellow/40 flex items-center justify-center text-yellow-600 transition-transform group-hover:scale-110">
-                  <span className="material-symbols-outlined text-3xl">psychology</span>
-                </div>
+              <div className="flex items-center gap-5 group">
+                <div className="shrink-0 w-5 h-5 rounded-full bg-pastel-mint ring-2 ring-pastel-mint ring-offset-4 ring-offset-white shadow-sm transition-transform group-hover:scale-110"></div>
                 <div>
                   <h4 className="font-bold uppercase tracking-widest text-xs mb-1">Specjalizacja</h4>
                   <p className="text-slate-500 italic">Terapeuta Integracji Sensorycznej (SI)</p>
