@@ -9,7 +9,6 @@ import Equipment from './components/Equipment';
 import Stories from './components/Stories';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-
 const App: React.FC = () => {
   return (
     <main className="w-full min-h-screen">
