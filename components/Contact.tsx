@@ -7,75 +7,94 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="kontakt" className="py-40 relative overflow-hidden">
-      <div className="absolute inset-0 bg-primary/5 -z-10"></div>
-      <div
-        className="absolute inset-0 -z-[5] opacity-[0.2] bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/assets/fizjociocia_bg.webp')" }}
-      ></div>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
+    <section id="kontakt" className="py-24 relative overflow-hidden bg-slate-50">
+      <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]"></div>
+      
+      <div className="max-w-5xl mx-auto px-4 relative">
+        {/* Envelope/Postcard Container */}
+        <div className="bg-white rounded-sm shadow-2xl overflow-hidden relative transform rotate-1 border border-slate-200">
+            {/* Stamp / Decorative Top Bar */}
+            <div className="h-2 bg-gradient-to-r from-red-300 via-blue-300 to-red-300 opacity-50 bg-[length:40px_100%]"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                {/* Left Side: "Stamp" & Info */}
+                <div className="md:col-span-2 bg-soft-beige p-10 border-r border-slate-100 border-dashed relative">
+                    <div className="absolute top-6 right-6 w-24 h-24 border-4 border-slate-200 opacity-50 rounded-full flex items-center justify-center rotate-12 pointer-events-none">
+                        <span className="text-xs font-bold text-slate-300 uppercase tracking-widest text-center">Fizjo<br/>Ciocia<br/>Priority</span>
+                    </div>
 
-          {/* Contact Details */}
-          <div>
-            <h2 className="text-8xl font-display font-bold mb-12 leading-none">Czekam <br /> na Was.</h2>
-            <p className="text-2xl text-slate-500 font-light mb-16 leading-relaxed">
-              Każde pytanie jest ważne. Każda wątpliwość zasługuje na rozwianie. Stwórzmy razem bezpieczną przystań dla Twojego dziecka.
-            </p>
+                    <h3 className="font-handwritten text-4xl text-slate-800 mb-2">Cześć!</h3>
+                    <p className="text-sm font-bold tracking-widest text-slate-400 uppercase mb-8">Napisz do mnie</p>
 
-            <div className="space-y-10">
-              <a href="tel:+48799055218" className="flex items-center gap-8 group">
-                <div className="w-14 h-14 bg-white shadow-sm rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <span className="material-symbols-outlined">call</span>
+                    <div className="space-y-6 text-slate-600">
+                        <div className="flex items-start gap-4">
+                            <span className="material-symbols-outlined text-primary mt-1">call</span>
+                            <div>
+                                <p className="text-xs uppercase text-slate-400 font-bold">Telefon</p>
+                                <a href="tel:+48799055218" className="hover:text-primary transition-colors font-medium">799 055 218</a>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-4">
+                            <span className="material-symbols-outlined text-primary mt-1">mail</span>
+                            <div>
+                                <p className="text-xs uppercase text-slate-400 font-bold">Email</p>
+                                <a href="mailto:kochanowska.marcelina17@gmail.com" className="hover:text-primary transition-colors font-medium break-all">kochanowska.marcelina17@gmail.com</a>
+                            </div>
+                        </div>
+                         <div className="flex items-start gap-4">
+                            <span className="material-symbols-outlined text-primary mt-1">pin_drop</span>
+                            <div>
+                                <p className="text-xs uppercase text-slate-400 font-bold">Gabinet</p>
+                                <p className="font-medium">Poznań &amp; Okolice</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-12 opacity-80">
+                         <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
+                    </div>
                 </div>
-                <span className="text-2xl font-medium">799 055 218</span>
-              </a>
-              <a href="mailto:kochanowska.marcelina17@gmail.com" className="flex items-center gap-8 group">
-                <div className="w-14 h-14 bg-white shadow-sm rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                  <span className="material-symbols-outlined">mail</span>
+
+                {/* Right Side: Letter Form */}
+                <div className="md:col-span-3 p-10 bg-white relative">
+                    <h2 className="text-3xl font-display font-bold text-slate-800 mb-1">Porozmawiajmy.</h2>
+                    <p className="text-slate-500 mb-8 italic">Opowiedz mi, co Cię martwi, a znajdziemy rozwiązanie.</p>
+
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        <div className="relative group">
+                             <input
+                                type="text"
+                                className="w-full border-0 border-b border-slate-300 bg-transparent py-2 focus:ring-0 focus:border-primary transition-all placeholder:text-slate-300 placeholder:italic placeholder:font-handwritten placeholder:text-lg"
+                                placeholder="Imię Rodzica i Dziecka"
+                                required
+                              />
+                        </div>
+                        <div className="relative group">
+                             <input
+                                type="tel"
+                                className="w-full border-0 border-b border-slate-300 bg-transparent py-2 focus:ring-0 focus:border-primary transition-all placeholder:text-slate-300 placeholder:italic placeholder:font-handwritten placeholder:text-lg"
+                                placeholder="Twój numer telefonu"
+                                required
+                              />
+                        </div>
+                        <div className="relative group">
+                             <textarea
+                                rows={3}
+                                className="w-full border-0 border-b border-slate-300 bg-transparent py-2 focus:ring-0 focus:border-primary transition-all placeholder:text-slate-300 placeholder:italic placeholder:font-handwritten placeholder:text-lg resize-none leading-loose"
+                                style={{backgroundImage: 'linear-gradient(transparent 96%, #e2e8f0 97%)', backgroundSize: '100% 2rem', lineHeight: '2rem'}}
+                                placeholder="W czym mogę pomóc?..."
+                                required
+                              ></textarea>
+                        </div>
+
+                        <div className="pt-4 text-right">
+                             <button type="submit" className="px-8 py-3 bg-slate-800 text-white font-bold tracking-widest uppercase text-xs hover:bg-primary transition-colors shadow-lg hover:shadow-xl rounded-sm">
+                                Wyślij list
+                             </button>
+                        </div>
+                    </form>
                 </div>
-                <span className="text-2xl font-medium">kochanowska.marcelina17@gmail.com</span>
-              </a>
             </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-white p-16 scribble-border shadow-2xl relative">
-            <div className="absolute -top-12 -right-12 w-32 h-32 bg-pastel-mint scribble-border -z-10 floating-slow"></div>
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Imię Rodzica &amp; Dziecka</label>
-                <input
-                  type="text"
-                  className="w-full border-0 border-b-2 border-slate-100 bg-transparent py-4 focus:ring-0 focus:border-primary transition-all text-xl"
-                  placeholder="Jak do Was się zwracać?"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Telefon</label>
-                <input
-                  type="tel"
-                  className="w-full border-0 border-b-2 border-slate-100 bg-transparent py-4 focus:ring-0 focus:border-primary transition-all text-xl"
-                  placeholder="Gdzie możemy porozmawiać?"
-                  required
-                />
-              </div>
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Wiadomość</label>
-                <textarea
-                  rows={4}
-                  className="w-full border-0 border-b-2 border-slate-100 bg-transparent py-4 focus:ring-0 focus:border-primary transition-all text-xl"
-                  placeholder="Opowiedz mi Waszą historię..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" className="w-full py-8 text-xl font-bold bg-slate-900 text-white hover:bg-primary transition-all scribble-border">
-                Wyślij w świat
-              </button>
-            </form>
-          </div>
-
         </div>
       </div>
     </section>

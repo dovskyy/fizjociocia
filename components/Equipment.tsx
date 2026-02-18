@@ -4,86 +4,117 @@ const equipment = [
   {
     id: '01',
     name: 'C-MILL',
-    tag: 'Trening chodu',
-    description: 'To interaktywna bieżnia, która zamienia naukę chodzenia w przygodę. Dzięki wyświetlanym na podłożu grom, dziecko uczy się omijać przeszkody i planować kolejne kroki, co bardzo pomaga w codziennym poruszaniu się.',
-    color: 'bg-primary/20',
-    icon: 'neurology',
+    subtitle: 'Wirtualny Spacer',
+    spec: 'Biofeedback',
+    description: 'Bieżnia, która zamienia żmudną naukę chodzenia w grę wideo. Projektujemy na podłodze przeszkody i cele, a dziecko, goniąc smoki lub zbierając punkty, nieświadomie trenuje chód.',
+    icon: 'directions_walk',
+    accent: 'text-emerald-500',
+    bg: 'bg-emerald-50'
   },
   {
     id: '02',
-    name: 'Rezonans Stochastyczny',
-    tag: 'Równowaga i stabilizacja',
-    description: 'Urządzenie wytwarza delikatne, nieregularne drgania, które pobudzają ciało do reakcji. Pomaga to dziecku lepiej "czuć" swoje mięśnie i stawy, co przekłada się na lepszą stabilność i pewniejszą postawę.',
-    color: 'bg-pastel-mint/30',
+    name: 'Rezonans',
+    subtitle: 'Dobre Wibracje',
+    spec: 'Neuromodulacja',
+    description: 'Stochastyczne wibracje to masaż dla układu nerwowego. Losowe drgania "budzą" uśpione połączenia nerwowe, poprawiając stabilność tam, gdzie jej brakuje.',
     icon: 'waves',
+    accent: 'text-violet-500',
+    bg: 'bg-violet-50'
   },
   {
     id: '03',
-    name: 'Platforma Galileo',
-    tag: 'Wzmocnienie mięśni',
-    description: 'Platforma wykorzystuje wibracje naśladujące ruchy podczas chodzenia. To świetne wsparcie tradycyjnych ćwiczeń — pomaga wzmocnić siłę mięśni i poprawić koordynację w sposób bezpieczny i efektywny.',
-    color: 'bg-pastel-yellow/40',
-    icon: 'fitness_center',
+    name: 'Galileo',
+    subtitle: 'Trening Kosmonauty',
+    spec: 'Wibroterapia',
+    description: 'System używany pierwotnie przez astronautów. Wibracje o określonej częstotliwości zmuszają mięśnie do pracy, wzmacniając je szybciej niż tradycyjne ćwiczenia.',
+    icon: 'accessibility_new',
+    accent: 'text-amber-500',
+    bg: 'bg-amber-50'
   },
 ];
 
 const Equipment: React.FC = () => {
   return (
-    <section id="sprzet" className="py-24 relative overflow-hidden paper-texture">
-      {/* Background Image & Overlay */}
-      <div className="absolute inset-0 bg-primary/5 -z-10"></div>
+    <section id="sprzet" className="py-24 relative">
+      {/* PRESERVED BACKGROUND */}
+      <div className="absolute inset-0 bg-soft-beige/40 -z-10"></div>
       <div 
-        className="absolute inset-0 -z-[5] opacity-[0.25] bg-cover bg-no-repeat pointer-events-none"
+        className="absolute inset-0 -z-[5] opacity-[0.25] bg-cover bg-no-repeat pointer-events-none mix-blend-multiply"
         style={{ 
           backgroundImage: "url('/assets/fizjociocia_bg_3.webp')",
-          backgroundPosition: 'calc(50% - 9cm) 50%' 
+          backgroundPosition: 'center right' 
         }}
       ></div>
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
-          {/* Header Column */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="relative inline-block mb-4">
-              <span className="text-[10px] font-bold tracking-[0.4em] text-slate-400 uppercase">Zaplecze technologiczne</span>
-              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary/30 scribble-border"></div>
+          {/* Header Column (Sticky) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 backdrop-blur-sm mb-6 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+              <span className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Zaplecze Technologiczne</span>
             </div>
             
-            <h2 className="text-4xl lg:text-6xl font-display font-bold leading-[1.1] mb-6 text-slate-900">
-              Sprzęt <br />
-              <span className="italic font-normal font-handwritten text-primary block mt-1 text-5xl lg:text-7xl">w parze z dotykiem</span>
+            <h2 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 mb-6 tracking-tight">
+              Technologia <br />
+              <span className="text-primary font-serif italic text-4xl lg:text-6xl opacity-90">w służbie natury.</span>
             </h2>
             
-            <p className="text-base text-slate-600 font-light leading-relaxed mb-8 max-w-sm">
-              Posiadam doświadczenie w pracy z nowoczesnym sprzętem rehabilitacyjnym, który wspiera rozwój ruchowy dzieci. Każde urządzenie jest narzędziem, które wykorzystuję z myślą o indywidualnych potrzebach każdego małego pacjenta.
+            <p className="text-lg text-slate-600 font-light leading-relaxed mb-8 border-l-2 border-primary/30 pl-6">
+              To nie są tylko maszyny. To nasi <span className="font-medium text-slate-800">asystenci do zadań specjalnych</span>. 
+              Pozwalają nam zajrzeć tam, gdzie wzrok nie sięga i wzmocnić to, co wymaga wsparcia.
             </p>
+
+            {/* Decorative Tech Grid */}
+            <div className="w-32 h-32 opacity-20" 
+                 style={{ backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', backgroundSize: '8px 8px' }}>
+            </div>
           </div>
 
-          {/* Equipment Grid Column */}
-          <div className="lg:col-span-7 space-y-10">
+          {/* Equipment List Column */}
+          <div className="lg:col-span-7 flex flex-col gap-8">
             {equipment.map((item, index) => (
               <div 
                 key={item.id}
-                className={`group relative p-8 lg:p-10 transition-all duration-500 ${index % 2 === 0 ? 'ml-0 mr-8' : 'ml-8 mr-0'}`}
+                className="group relative bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-white/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden"
               >
-                {/* Background Shape - Solid White for visibility */}
-                <div className="absolute inset-0 bg-white scribble-border shadow-md transition-transform duration-700 group-hover:scale-[1.03] group-hover:-rotate-1 -z-10"></div>
-                
-                {/* Secondary Offset Shape - Pastel Color Accent */}
-                <div className={`absolute inset-0 ${item.color} opacity-40 scribble-border-rev transition-transform duration-700 group-hover:scale-[1.06] group-hover:rotate-2 -z-20 transform translate-x-2 translate-y-2`}></div>
+                {/* Glow Effect on Hover */}
+                <div className={`absolute -right-20 -top-20 w-64 h-64 ${item.bg} rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700`}></div>
 
-                <div className="relative z-10">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <h3 className="text-2xl font-display font-bold text-slate-900">{item.name}</h3>
-                    <span className="px-3 py-1 rounded-full bg-slate-50 text-[9px] font-bold uppercase tracking-widest text-slate-500 border border-slate-200">
-                      {item.tag}
+                <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
+                  
+                  {/* Icon Box */}
+                  <div className={`w-16 h-16 rounded-xl ${item.bg} flex items-center justify-center shrink-0 border border-white shadow-inner group-hover:scale-110 transition-transform duration-300`}>
+                    <span className={`material-symbols-outlined text-3xl ${item.accent}`}>
+                      {item.icon}
                     </span>
                   </div>
-                  <p className="text-base text-slate-600 font-light leading-relaxed">
-                    {item.description}
-                  </p>
+
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                      <h3 className="text-2xl font-display font-bold text-slate-800 group-hover:text-primary transition-colors">
+                        {item.name}
+                      </h3>
+                      {/* Tech Badge */}
+                      <span className="px-3 py-1 rounded-md bg-slate-100/80 border border-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                        {item.spec}
+                      </span>
+                    </div>
+                    
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">
+                      {item.subtitle}
+                    </p>
+
+                    <p className="text-base text-slate-600 leading-relaxed font-light">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
+
+                {/* Bottom decorative bar */}
+                <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r from-transparent via-${item.accent.split('-')[1]}-200 to-transparent w-full opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
               </div>
             ))}
           </div>
