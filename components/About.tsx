@@ -2,7 +2,7 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <section id="o-mnie" className="py-40 relative overflow-hidden">
+    <section id="o-mnie" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-primary/5 -z-10"></div>
       <div
         className="absolute inset-0 -z-[5] opacity-[0.2] bg-cover bg-center bg-no-repeat"
@@ -23,7 +23,7 @@ const About: React.FC = () => {
           </div>
 
           <div className="col-span-12 lg:col-span-6 lg:col-start-8 mt-20 lg:mt-0">
-            <h2 className="text-6xl font-display font-bold mb-10 leading-tight">
+            <h2 className="text-5xl lg:text-6xl font-display font-bold mb-8 leading-tight">
               <span className="text-primary italic">Przewodniczka</span> <br />
               małych odkrywców.
             </h2>

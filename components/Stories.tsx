@@ -2,14 +2,14 @@ import React from 'react';
 
 const Stories: React.FC = () => {
   return (
-    <section id="historie" className="py-40 overflow-hidden">
+    <section id="historie" className="py-24 overflow-hidden">
       <div className="container mx-auto px-6">
 
 
         <div className="relative">
 
           {/* Story 1: Filip */}
-          <div className="flex flex-col lg:flex-row gap-20 items-center mb-40">
+          <div className="flex flex-col lg:flex-row gap-12 items-center mb-20">
             <div className="w-full lg:w-1/2 relative group">
               <div className="absolute inset-0 bg-pastel-mint scribble-border translate-x-4 translate-y-4 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
               <img
@@ -24,15 +24,15 @@ const Stories: React.FC = () => {
 
             <div className="w-full lg:w-1/2 max-w-xl">
               <span className="text-xs font-bold tracking-[0.3em] text-emerald-500 uppercase mb-4 block">Historia Filipa</span>
-              <h4 className="text-5xl font-display font-bold mb-8 italic">Odwaga w każdym kroku</h4>
-              <p className="text-2xl font-light italic text-slate-500 leading-relaxed border-l-4 border-pastel-mint pl-8">
+              <h4 className="text-3xl lg:text-4xl font-display font-bold mb-6 italic">Odwaga w każdym kroku</h4>
+              <p className="text-lg font-light italic text-slate-500 leading-relaxed border-l-4 border-pastel-mint pl-8">
                 "Filip bał się samodzielnego poruszania. Dzięki zabawie i cierpliwości Pani Marceliny, dzisiaj biega po całym placu zabaw. Każda wizyta była dla niego wielką przygodą, a nie obowiązkiem."
               </p>
             </div>
           </div>
 
           {/* Story 2: Zosia */}
-          <div className="flex flex-col lg:flex-row-reverse gap-20 items-center">
+          <div className="flex flex-col lg:flex-row-reverse gap-12 items-center">
             <div className="w-full lg:w-1/2 relative group">
               <div className="absolute inset-0 bg-pastel-yellow scribble-border -translate-x-4 translate-y-4 -z-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform"></div>
               <img
@@ -47,8 +47,8 @@ const Stories: React.FC = () => {
 
             <div className="w-full lg:w-1/2 max-w-xl lg:text-right">
               <span className="text-xs font-bold tracking-[0.3em] text-primary uppercase mb-4 block">Historia Zosi</span>
-              <h4 className="text-5xl font-display font-bold mb-8 italic">Spokojny start w życie</h4>
-              <p className="text-2xl font-light italic text-slate-500 leading-relaxed lg:border-r-4 border-primary lg:pr-8">
+              <h4 className="text-3xl lg:text-4xl font-display font-bold mb-6 italic">Spokojny start w życie</h4>
+              <p className="text-lg font-light italic text-slate-500 leading-relaxed lg:border-r-4 border-primary lg:pr-8">
                 "Asymetria ułożeniowa Zosi spędzała nam sen z powiek. Marcelina nie tylko pomogła córeczce, ale i nam - rodzicom - dając bezcenne wskazówki dotyczące codziennej pielęgnacji i noszenia."
               </p>
             </div>

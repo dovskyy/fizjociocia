@@ -33,9 +33,9 @@ const Patients: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-[30vw] h-[30vw] bg-pastel-yellow/15 rounded-full blur-[100px] -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Header Section */}
-        <div className="mb-16 text-center max-w-3xl mx-auto">
+        <div className="mb-14 text-center max-w-3xl mx-auto">
           <span className="text-xs font-bold tracking-[0.3em] text-primary uppercase mb-3 block">Komu pomagam</span>
           <h2 className="text-5xl lg:text-6xl font-display font-bold leading-none mb-4">
             Każde dziecko <br />
@@ -48,7 +48,7 @@ const Patients: React.FC = () => {
 
         {/* Two-Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          
+
           {patientGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="relative">
               {/* Column Header */}
@@ -68,7 +68,7 @@ const Patients: React.FC = () => {
                       <span className={`material-symbols-outlined text-2xl ${patient.textClass}`}>{patient.icon}</span>
                     </div>
                     <p className="text-slate-700 font-medium text-lg leading-snug">{patient.label}</p>
-                    
+
                     {/* Subtle Arrow Indicator on Hover */}
                     <span className={`material-symbols-outlined ml-auto opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 ${patient.textClass}`}>
                       arrow_forward

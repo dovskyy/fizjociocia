@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-20 text-center text-slate-300 text-xs font-light tracking-[0.2em] leading-loose">
+        <div className="mt-12 text-center text-slate-300 text-xs font-light tracking-[0.2em] leading-loose">
           &copy; 2026 MGR MARCELINA KOCHANOWSKA - FIZJOCIOCIA<br />
         </div>
       </div>
