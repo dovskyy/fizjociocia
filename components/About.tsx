@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
-    <section id="o-mnie" className="py-40 relative overflow-hidden">
+    <section id="o-mnie" className="py-16 md:py-24 lg:py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-primary/5 -z-10"></div>
       <div
         className="absolute inset-0 -z-[5] opacity-[0.2] bg-cover bg-center bg-no-repeat"
@@ -42,9 +42,9 @@ const About: React.FC = () => {
             variants={{
                 visible: { transition: { staggerChildren: 0.15 } }
             }}
-            className="col-span-12 lg:col-span-6 lg:col-start-8 mt-12 lg:mt-0"
+            className="col-span-12 lg:col-span-6 lg:col-start-8 mt-8 lg:mt-0"
           >
-            <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="text-6xl font-display font-bold mb-10 leading-tight">
+            <motion.h2 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }} className="text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-6 md:mb-10 leading-tight">
               <span className="text-primary italic">Przewodniczka</span> <br />
               małych odkrywców.
             </motion.h2>

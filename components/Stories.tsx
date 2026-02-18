@@ -3,16 +3,16 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from './AnimatedSectio
 
 const Stories: React.FC = () => {
   return (
-    <section id="historie" className="py-24 relative overflow-hidden bg-soft-beige">
+    <section id="historie" className="py-16 md:py-24 relative overflow-hidden bg-soft-beige">
       <div className="absolute top-10 left-10 w-64 h-64 bg-pastel-mint/20 rounded-full blur-3xl -z-10"></div>
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-6">
-        <AnimatedSection className="text-center mb-20 relative">
+        <AnimatedSection className="text-center mb-10 md:mb-20 relative">
           <span className="inline-block px-4 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 shadow-sm rotate-[-2deg]">
             Pamiętnik Sukcesów
           </span>
-          <h2 className="text-5xl md:text-6xl font-display font-bold text-slate-800 relative">
+          <h2 className="text-3xl md:text-6xl font-display font-bold text-slate-800 relative">
             Małe kroki,
             <div className="absolute -top-[-2rem] -right-16 lg:right-[15rem] pointer-events-none select-none" style={{ transform: 'scaleX(-1)' }}>
               <img
@@ -29,7 +29,7 @@ const Stories: React.FC = () => {
 
         {/* Scrapbook Layout */}
         <StaggerContainer
-          className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-16 lg:gap-8 pt-10"
+          className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 lg:gap-8 pt-10"
           staggerDelay={0.2}
           initialDelay={0.1}
         >
@@ -96,7 +96,7 @@ const Stories: React.FC = () => {
 
         </StaggerContainer>
 
-        <AnimatedSection className="text-center mt-24" delay={0.2}>
+        <AnimatedSection className="text-center mt-12 md:mt-24" delay={0.2}>
           <p className="font-handwritten text-2xl text-slate-400 rotate-[-1deg]">
             ...i wiele innych historii pisanych codziennie.
           </p>

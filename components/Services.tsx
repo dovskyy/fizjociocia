@@ -3,7 +3,7 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from './AnimatedSectio
 
 const Services: React.FC = () => {
   return (
-    <section id="doswiadczenie" className="py-24 relative overflow-hidden">
+    <section id="doswiadczenie" className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-primary/5 -z-10"></div>
       <div
         className="absolute inset-0 -z-[5] opacity-[0.2] bg-cover bg-center bg-no-repeat"
@@ -12,27 +12,27 @@ const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <AnimatedSection className="mb-20">
+        <AnimatedSection className="text-center lg:text-left mb-12 md:mb-20">
           <span className="text-xs font-bold tracking-[0.3em] text-slate-500 uppercase block mb-4">
             Metody terapii
           </span>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-            <h2 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-slate-900 leading-tight">
               Narzędzia <br/>
               <span className="text-primary italic">wsparcia.</span>
             </h2>
-            <p className="max-w-md text-slate-600 text-lg font-light leading-relaxed border-l-4 border-primary/20 pl-6">
+            <p className="max-w-md mx-auto lg:mx-0 text-slate-600 text-lg font-light leading-relaxed lg:border-l-4 lg:border-primary/20 lg:pl-6">
               Nieustanna nauka to mój sposób na zapewnienie Twojemu dziecku bezpieczeństwa i komfortu, na jakie zasługuje.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Cards Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12" staggerDelay={0.15} initialDelay={0.1}>
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12" staggerDelay={0.15} initialDelay={0.1}>
 
           <StaggerItem>
             <div className="group relative bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border-t-4 border-primary h-full">
-              <span className="absolute -right-6 -top-10 font-display font-bold text-[12rem] text-primary/10 select-none transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
+              <span className="absolute -right-6 -top-10 font-display font-bold text-[8rem] md:text-[12rem] text-primary/10 select-none transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
                 01
               </span>
               <div className="relative z-10">
@@ -62,7 +62,7 @@ const Services: React.FC = () => {
 
           <StaggerItem>
             <div className="group relative bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border-t-4 border-emerald-400 h-full">
-              <span className="absolute -right-6 -top-10 font-display font-bold text-[12rem] text-emerald-500/10 select-none transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
+              <span className="absolute -right-6 -top-10 font-display font-bold text-[8rem] md:text-[12rem] text-emerald-500/10 select-none transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
                 02
               </span>
               <div className="relative z-10">
@@ -92,7 +92,7 @@ const Services: React.FC = () => {
 
           <StaggerItem>
             <div className="group relative bg-white rounded-3xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 overflow-hidden border-t-4 border-amber-400 h-full">
-              <span className="absolute -right-6 -top-10 font-display font-bold text-[12rem] text-amber-500/10 select-none transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
+              <span className="absolute -right-6 -top-10 font-display font-bold text-[8rem] md:text-[12rem] text-amber-500/10 select-none transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
                 03
               </span>
               <div className="relative z-10">

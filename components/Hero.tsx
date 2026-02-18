@@ -8,7 +8,6 @@ const Hero: React.FC = () => {
     offset: ["start start", "end start"]
   });
 
-  const yText = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -34,7 +33,7 @@ const Hero: React.FC = () => {
   const yButton = useSpring(mouseY, { stiffness: 150, damping: 15, mass: 0.1 });
 
   return (
-    <section ref={ref} id="hero" className="relative min-h-[90vh] flex items-center pt-28 pb-16 overflow-hidden">
+    <section ref={ref} id="hero" className="relative min-h-[90vh] lg:h-screen flex items-center pt-28 pb-16 overflow-hidden">
       {/* Background Animated Blobs - Parallax & Organic Motion */}
       <motion.div style={{ opacity }} className="absolute inset-0 pointer-events-none">
           <motion.div 
@@ -70,8 +69,7 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 
           {/* Text Content - Staggered Reveal */}
-          <motion.div 
-            style={{ y: yText }}
+          <div
             className="order-2 lg:order-1 relative z-20"
           >
             <div className="relative">
@@ -103,14 +101,14 @@ const Hero: React.FC = () => {
                 Fizjoterapia pediatryczna oparta na metodzie NDT-Bobath i terapii integracji sensorycznej. Pomagam dzieciom odkrywać radość z ruchu — w ich własnym tempie.
               </motion.p>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
-                className="flex flex-col sm:flex-row gap-8 items-start sm:items-center relative z-10"
+                className="hidden lg:flex flex-row gap-8 items-center relative z-10"
               >
-                <motion.a 
-                  href="#o-mnie" 
+                <motion.a
+                  href="#o-mnie"
                   className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-base text-white bg-slate-900 rounded-full shadow-lg hover:bg-slate-800 hover:shadow-primary/40 transition-all duration-300"
                   style={{ x: xButton, y: yButton }}
                   onMouseMove={handleMouseMove}
@@ -130,18 +128,18 @@ const Hero: React.FC = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="w-8 h-px bg-slate-300"></span>
-                    NDT-Bobath
+                    Terapeuta NDT-Bobath
                   </div>
                 </div>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Visual Content - Parallax Image & Morphing Shape */}
           <div className="order-1 lg:order-2 relative flex justify-center items-center perspective-1000">
             <motion.div 
                 style={{ y: yImage }}
-                className="relative w-[320px] h-[380px] sm:w-[380px] sm:h-[440px] lg:w-[420px] lg:h-[480px]"
+                className="relative w-full max-w-[320px] aspect-[320/380] sm:w-[380px] sm:max-w-none sm:h-[440px] sm:aspect-auto lg:w-[420px] lg:h-[480px]"
             >
               {/* Animated floating border - REVERTED to CSS animation */}
               <div className="absolute top-8 right-8 w-full h-full border-[3px] border-slate-900/10 scribble-border-rev transform rotate-3 scale-95 z-0 floating-slow"></div>

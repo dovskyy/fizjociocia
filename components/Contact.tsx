@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="kontakt" className="py-24 relative overflow-hidden bg-slate-50">
+    <section id="kontakt" className="py-16 md:py-24 relative overflow-hidden bg-slate-50">
       <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       <div className="max-w-5xl mx-auto px-4 relative">
@@ -20,13 +20,16 @@ const Contact: React.FC = () => {
         />
 
         <AnimatedSection direction="up" className="relative z-10">
-          <div className="bg-white rounded-sm shadow-2xl overflow-hidden transform rotate-1 border border-slate-200">
+          <div className="bg-white rounded-sm shadow-2xl overflow-hidden transform rotate-0 md:rotate-1 border border-slate-200">
             <div className="h-2 bg-gradient-to-r from-red-300 via-blue-300 to-red-300 opacity-50 bg-[length:40px_100%]"></div>
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-              <div className="md:col-span-2 bg-soft-beige p-10 border-r border-slate-100 border-dashed relative">
-                <div className="absolute top-6 right-6 w-24 h-24 border-4 border-slate-200 opacity-50 rounded-full flex items-center justify-center rotate-12 pointer-events-none">
+              <div className="md:col-span-2 bg-soft-beige p-6 md:p-10 border-r border-slate-100 border-dashed relative">
+                <div className="hidden md:flex absolute top-6 right-6 w-24 h-24 border-4 border-slate-200 opacity-50 rounded-full items-center justify-center rotate-12 pointer-events-none">
                   <span className="text-xs font-bold text-slate-300 uppercase tracking-widest text-center">Fizjo<br/>Ciocia<br/>Priority</span>
+                </div>
+                <div className="md:hidden absolute top-6 right-6">
+                  <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
                 </div>
 
                 <h3 className="font-handwritten text-4xl text-slate-800 mb-2">Cześć!</h3>
@@ -56,12 +59,12 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-12 opacity-80">
+                <div className="hidden md:block mt-12 opacity-80">
                   <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
                 </div>
               </div>
 
-              <div className="md:col-span-3 p-10 bg-white relative">
+              <div className="md:col-span-3 p-6 md:p-10 bg-white relative">
                 <h2 className="text-3xl font-display font-bold text-slate-800 mb-1">Porozmawiajmy.</h2>
                 <p className="text-slate-500 mb-8 italic">Masz pytania? Napisz do mnie, a odpowiem tak szybko, jak to możliwe!</p>
 

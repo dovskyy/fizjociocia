@@ -36,7 +36,7 @@ const equipment = [
 
 const Equipment: React.FC = () => {
   return (
-    <section id="sprzet" className="py-24 relative">
+    <section id="sprzet" className="py-16 md:py-24 relative">
       <div className="absolute inset-0 bg-soft-beige/40 -z-10"></div>
       <div
         className="absolute inset-0 -z-[5] opacity-[0.25] bg-cover bg-no-repeat pointer-events-none mix-blend-multiply"
@@ -50,23 +50,20 @@ const Equipment: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
           {/* Header Column (Sticky) */}
-          <AnimatedSection direction="left" className="lg:col-span-5 lg:sticky lg:top-32 self-start">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 border border-slate-200 backdrop-blur-sm mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-              <span className="text-[10px] font-bold tracking-widest text-slate-500 uppercase">Zaplecze Technologiczne</span>
-            </div>
+          <AnimatedSection direction="left" className="lg:col-span-5 lg:sticky lg:top-32 self-start text-center lg:text-left">
 
-            <h2 className="text-5xl lg:text-7xl font-display font-bold text-slate-900 mb-6 tracking-tight">
+              <span className="text-xs font-bold tracking-[0.3em] text-slate-500 uppercase block mb-4">Wykorzystywany sprzęt</span>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-display font-bold text-slate-900 mb-6 tracking-tight">
               Technologia <br />
-              <span className="text-primary font-serif italic text-4xl lg:text-6xl opacity-90">w służbie natury.</span>
+                <span className="text-primary italic">w służbie natury.</span>
             </h2>
 
-            <p className="text-lg text-slate-600 font-light leading-relaxed mb-8 border-l-2 border-primary/30 pl-6">
+            <p className="text-lg text-slate-600 font-light leading-relaxed mb-8 lg:border-l-2 lg:border-primary/30 lg:pl-6">
               To nie są tylko maszyny. To nasi <span className="font-medium text-slate-800">asystenci do zadań specjalnych</span>.
               Pozwalają nam zajrzeć tam, gdzie wzrok nie sięga i wzmocnić to, co wymaga wsparcia.
             </p>
 
-            <div className="w-32 h-32 opacity-20"
+            <div className="hidden lg:block w-32 h-32 opacity-20"
                  style={{ backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', backgroundSize: '8px 8px' }}>
             </div>
           </AnimatedSection>
@@ -75,7 +72,7 @@ const Equipment: React.FC = () => {
           <StaggerContainer className="lg:col-span-7 flex flex-col gap-8" staggerDelay={0.15} initialDelay={0.1}>
             {equipment.map((item) => (
               <StaggerItem key={item.id} direction="right">
-                <div className="group relative bg-white/60 backdrop-blur-md rounded-2xl p-8 border border-white/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
+                <div className="group relative bg-white/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/50 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 overflow-hidden">
                   <div className={`absolute -right-20 -top-20 w-64 h-64 ${item.bg} rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700`}></div>
 
                   <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">

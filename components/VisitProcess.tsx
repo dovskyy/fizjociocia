@@ -29,7 +29,7 @@ const steps = [
   {
     number: '04',
     title: 'Wsparcie',
-    description: 'Jestem tu dla Was. Monitorujemy postępy i świętujemy każdy nowy ruch.',
+    description: 'Monitorujemy postępy i świętujemy każdy nowy ruch.',
     icon: 'favorite',
     accent: 'bg-sky-100 text-sky-600',
     rotate: '-rotate-1'
@@ -38,12 +38,12 @@ const steps = [
 
 const VisitProcess: React.FC = () => {
   return (
-    <section id="wizyta" className="py-24 bg-soft-beige relative overflow-hidden">
+    <section id="wizyta" className="py-16 md:py-24 bg-soft-beige relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Header */}
-        <AnimatedSection className="text-center mb-24 max-w-2xl mx-auto relative">
+        <AnimatedSection className="text-center mb-12 md:mb-24 max-w-2xl mx-auto relative">
           <span className="text-xs font-bold tracking-[0.3em] text-slate-400 uppercase mb-4 block">
             Plan Działania
           </span>
@@ -58,7 +58,7 @@ const VisitProcess: React.FC = () => {
             src="/assets/baloon_3.webp"
             alt=""
             aria-hidden="true"
-            className="absolute top-0 -right-24 lg:-right-36 w-28 lg:w-40 opacity-65 floating-slow pointer-events-none select-none"
+            className="absolute top-0 right-0 md:-right-24 lg:-right-36 w-24 md:w-28 lg:w-40 opacity-40 md:opacity-65 floating-slow pointer-events-none select-none"
           />
         </AnimatedSection>
 
@@ -77,7 +77,7 @@ const VisitProcess: React.FC = () => {
               <StaggerItem key={index} direction="up">
                 <div className={`relative group ${index % 2 === 0 ? 'lg:mt-0' : 'lg:mt-12'} h-full`}>
                   <div className={`
-                    bg-white p-8 rounded-2xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]
+                    bg-white p-5 md:p-8 rounded-2xl shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)]
                     border border-slate-50 transition-all duration-500 ease-out
                     hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]
                     relative overflow-hidden
@@ -85,11 +85,16 @@ const VisitProcess: React.FC = () => {
                   `}>
                     <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
 
-                    <div className={`w-12 h-12 rounded-xl ${step.accent} bg-opacity-20 flex items-center justify-center mb-6 text-sm font-bold`}>
+                    <div className={`hidden md:flex w-12 h-12 rounded-xl ${step.accent} bg-opacity-20 items-center justify-center mb-6 text-sm font-bold`}>
                       {step.number}
                     </div>
 
-                    <h3 className="text-xl font-display font-bold text-slate-800 mb-3">{step.title}</h3>
+                    <h3 className="text-xl font-display font-bold text-slate-800 mb-3 flex items-center gap-3">
+                      <span className={`md:hidden inline-flex w-8 h-8 rounded-lg ${step.accent} bg-opacity-20 items-center justify-center text-xs font-bold shrink-0`}>
+                        {step.number}
+                      </span>
+                      {step.title}
+                    </h3>
                     <p className="text-slate-500 text-sm leading-relaxed mb-4">{step.description}</p>
 
                     <span className={`material-symbols-outlined absolute -bottom-4 -right-4 text-8xl opacity-[0.03] ${step.accent.split(' ')[1]}`}>
@@ -106,7 +111,7 @@ const VisitProcess: React.FC = () => {
           </StaggerContainer>
         </div>
 
-        <AnimatedSection className="text-center mt-20" delay={0.3}>
+        <AnimatedSection className="text-center mt-12 md:mt-20" delay={0.3}>
           <a href="#kontakt" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1 group">
             Kontakt
             <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
