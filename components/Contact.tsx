@@ -52,8 +52,8 @@ const Contact: React.FC = () => {
                          <div className="flex items-start gap-4">
                             <span className="material-symbols-outlined text-primary mt-1">pin_drop</span>
                             <div>
-                                <p className="text-xs uppercase text-slate-400 font-bold">Gabinet</p>
-                                <p className="font-medium">Poznań &amp; Okolice</p>
+                                <p className="text-xs uppercase text-slate-400 font-bold">Lokalizacja</p>
+                                <p className="font-medium">Bydgoszcz &amp; Warszawa</p>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ const Contact: React.FC = () => {
                 {/* Right Side: Letter Form */}
                 <div className="md:col-span-3 p-10 bg-white relative">
                     <h2 className="text-3xl font-display font-bold text-slate-800 mb-1">Porozmawiajmy.</h2>
-                    <p className="text-slate-500 mb-8 italic">Opowiedz mi, co Cię martwi, a znajdziemy rozwiązanie.</p>
+                    <p className="text-slate-500 mb-8 italic">Masz pytania? Napisz do mnie, a odpowiem tak szybko, jak to możliwe!</p>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="relative group">

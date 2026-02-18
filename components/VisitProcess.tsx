@@ -42,7 +42,7 @@ const VisitProcess: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header - Clean & Trustworthy */}
-        <div className="text-center mb-24 max-w-2xl mx-auto">
+        <div className="text-center mb-24 max-w-2xl mx-auto relative">
           <span className="text-xs font-bold tracking-[0.3em] text-slate-400 uppercase mb-4 block">
             Plan Działania
           </span>
@@ -50,9 +50,16 @@ const VisitProcess: React.FC = () => {
             Spokojna droga do <span className="text-primary italic">równowagi.</span>
           </h2>
           <p className="text-lg text-slate-500 font-light leading-relaxed">
-            Stworzyłam przejrzysty proces, abyś od pierwszej chwili czuł się zaopiekowany. 
+            Stworzyłam przejrzysty proces, abyś od pierwszej chwili czuł się zaopiekowany.
             Tutaj nie ma miejsca na chaos – jest plan dopasowany do rytmu Twojego dziecka.
           </p>
+          {/* Glitter balloons decoration */}
+          <img
+            src="/assets/baloon_3.webp"
+            alt=""
+            aria-hidden="true"
+            className="absolute top-0 -right-24 lg:-right-36 w-28 lg:w-40 opacity-65 floating-slow pointer-events-none select-none"
+          />
         </div>
 
         {/* Process Cards */}
@@ -113,7 +120,7 @@ const VisitProcess: React.FC = () => {
 
         <div className="text-center mt-20">
           <a href="#kontakt" className="inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-1 group">
-            Umów wizytę
+            Kontakt
             <span className="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </a>
         </div>
