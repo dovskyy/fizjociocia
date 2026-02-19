@@ -20,7 +20,7 @@ const Contact = () => {
           className="absolute left-1/2 -translate-x-1/2 -top-20 w-80 lg:w-96 opacity-60 floating-slow pointer-events-none select-none z-0"
         />
 
-        <AnimatedSection direction="up" className="relative z-10">
+        <AnimatedSection direction="up" className="relative z-10" disableOnMobile>
           <div className="bg-white rounded-sm shadow-2xl overflow-hidden transform rotate-0 md:rotate-1 border border-slate-200">
             <div className="h-2 bg-gradient-to-r from-red-300 via-blue-300 to-red-300 opacity-50 bg-[length:40px_100%]"></div>
 

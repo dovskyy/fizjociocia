@@ -7,7 +7,7 @@ const Stories = () => {
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl -z-10"></div>
 
       <div className="container mx-auto px-6">
-        <AnimatedSection className="text-center mb-10 md:mb-20 relative">
+        <AnimatedSection className="text-center mb-10 md:mb-20 relative" disableOnMobile>
           <span className="inline-block px-4 py-1 bg-white border border-slate-200 rounded-full text-xs font-bold tracking-widest text-slate-400 uppercase mb-4 shadow-sm rotate-[-2deg]">
             Pamiętnik Sukcesów
           </span>
@@ -32,10 +32,11 @@ const Stories = () => {
           className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 lg:gap-8 pt-10"
           staggerDelay={0.2}
           initialDelay={0.1}
+          disableOnMobile
         >
 
           {/* Story 1: Filip */}
-          <StaggerItem direction="left">
+          <StaggerItem direction="left" disableOnMobile>
             <div className="relative group perspective-1000">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-yellow-100/80 shadow-sm rotate-[-3deg] z-20 backdrop-blur-sm"></div>
               <div className="bg-white p-4 pb-16 shadow-lg rotate-[-2deg] transition-transform duration-500 hover:rotate-0 hover:scale-105 hover:shadow-2xl max-w-sm">
@@ -67,7 +68,7 @@ const Stories = () => {
           <div className="hidden lg:block w-32 h-1"></div>
 
           {/* Story 2: Zosia */}
-          <StaggerItem direction="right">
+          <StaggerItem direction="right" disableOnMobile>
             <div className="relative group perspective-1000 lg:mt-32">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-pink-100/80 shadow-sm rotate-[2deg] z-20 backdrop-blur-sm"></div>
               <div className="bg-white p-4 pb-16 shadow-lg rotate-[3deg] transition-transform duration-500 hover:rotate-0 hover:scale-105 hover:shadow-2xl max-w-sm">
@@ -98,7 +99,7 @@ const Stories = () => {
 
         </StaggerContainer>
 
-        <AnimatedSection className="text-center mt-12 md:mt-24" delay={0.2}>
+        <AnimatedSection className="text-center mt-12 md:mt-24" delay={0.2} disableOnMobile>
           <p className="font-handwritten text-2xl text-slate-400 rotate-[-1deg]">
             ...i wiele innych historii pisanych codziennie.
           </p>

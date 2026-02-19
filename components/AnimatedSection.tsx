@@ -1,5 +1,6 @@
 import { type FC, type ReactNode } from 'react';
 import { motion, Variants } from 'framer-motion';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 // Reusable scroll-reveal wrapper dla całych sekcji
 interface AnimatedSectionProps {
@@ -7,6 +8,7 @@ interface AnimatedSectionProps {
   className?: string;
   delay?: number;
   direction?: 'up' | 'left' | 'right' | 'none';
+  disableOnMobile?: boolean;
 }
 
 export const AnimatedSection: FC<AnimatedSectionProps> = ({
@@ -14,7 +16,14 @@ export const AnimatedSection: FC<AnimatedSectionProps> = ({
   className,
   delay = 0,
   direction = 'up',
+  disableOnMobile = false,
 }) => {
+  const isMobile = useIsMobile();
+
+  if (disableOnMobile && isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
   const initial = {
     opacity: 0,
     y: direction === 'up' ? 40 : 0,
@@ -40,6 +49,7 @@ interface StaggerContainerProps {
   className?: string;
   staggerDelay?: number;
   initialDelay?: number;
+  disableOnMobile?: boolean;
 }
 
 const containerVariants = (stagger: number, initial: number): Variants => ({
@@ -50,7 +60,7 @@ const containerVariants = (stagger: number, initial: number): Variants => ({
   },
 });
 
-export const itemVariants = (direction: 'up' | 'left' | 'right' = 'up'): Variants => ({
+export const itemVariants = (direction?: string): Variants => ({
   hidden: {
     opacity: 0,
     y: direction === 'up' ? 35 : 0,
@@ -69,27 +79,50 @@ export const StaggerContainer: FC<StaggerContainerProps> = ({
   className,
   staggerDelay = 0.1,
   initialDelay = 0,
-}) => (
-  <motion.div
-    className={className}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true, margin: '-80px' }}
-    variants={containerVariants(staggerDelay, initialDelay)}
-  >
-    {children}
-  </motion.div>
-);
+  disableOnMobile = false,
+}) => {
+  const isMobile = useIsMobile();
+
+  if (disableOnMobile && isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-80px' }}
+      variants={containerVariants(staggerDelay, initialDelay)}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 // Pojedynczy item do użycia wewnątrz StaggerContainer
 interface StaggerItemProps {
   children: ReactNode;
   className?: string;
   direction?: 'up' | 'left' | 'right';
+  disableOnMobile?: boolean;
 }
 
-export const StaggerItem: FC<StaggerItemProps> = ({ children, className, direction = 'up' }) => (
-  <motion.div className={className} variants={itemVariants(direction)}>
-    {children}
-  </motion.div>
-);
+export const StaggerItem: FC<StaggerItemProps> = ({
+  children,
+  className,
+  direction = 'up',
+  disableOnMobile = false,
+}) => {
+  const isMobile = useIsMobile();
+
+  if (disableOnMobile && isMobile) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div className={className} variants={itemVariants(direction)}>
+      {children}
+    </motion.div>
+  );
+};
