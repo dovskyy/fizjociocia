@@ -1,4 +1,3 @@
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Patients from './components/Patients';
@@ -11,7 +10,6 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <main className="w-full min-h-screen">
-      <Navbar />
       <Hero />
       <About />
       <Patients />
