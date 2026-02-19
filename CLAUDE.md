@@ -13,13 +13,13 @@ npm run preview   # Preview production build
 
 ## Architecture
 
-This is a single-page landing site for a pediatric physiotherapist (Fizjociocia — Marcelina Kochanowska). Built with **React 19 + TypeScript + Vite**, styled with **Tailwind CSS loaded via CDN** (not as a PostCSS plugin).
+This is a single-page landing site for a pediatric physiotherapist (Fizjociocia — Marcelina Kochanowska). Built with **React 19 + TypeScript + Vite**, styled with **Tailwind CSS 3** (build-time via PostCSS).
 
-### Key architectural note — Tailwind via CDN
+### Tailwind setup
 
-Tailwind is loaded from a CDN script tag in `index.html`, not installed as a package. The full theme config (custom colors, fonts, animations, keyframes) lives inside a `<script>` block in `index.html`. Custom utility classes (`scribble-border`, `floating-slow`, `floating-fast`, `text-outline`, `paper-texture`, etc.) are defined in a `<style type="text/tailwindcss">` block in the same file. **Do not look for a `tailwind.config.js` — it does not exist.**
+Tailwind is installed as a PostCSS plugin with config in `tailwind.config.js` and `postcss.config.js`. Custom utilities (`scribble-border`, `floating-slow`, `floating-fast`, `paper-texture`, etc.) and scrollbar styles live in `index.css`, which is imported in `index.tsx`.
 
-### Custom design tokens (defined in `index.html`)
+### Custom design tokens (defined in `tailwind.config.js`)
 
 | Token | Value |
 |---|---|
