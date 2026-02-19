@@ -32,8 +32,7 @@ const Stories = () => {
           className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-8 lg:gap-8 pt-10"
           staggerDelay={0.2}
           initialDelay={0.1}
-          disableOnMobile
-        >
+                 >
 
           {/* Story 1: Filip */}
           <StaggerItem direction="left" disableOnMobile>
