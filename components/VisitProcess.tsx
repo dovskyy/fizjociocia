@@ -1,4 +1,3 @@
-import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './AnimatedSection';
 
 const steps = [
@@ -36,7 +35,7 @@ const steps = [
   },
 ];
 
-const VisitProcess: React.FC = () => {
+const VisitProcess = () => {
   return (
     <section id="wizyta" className="py-16 md:py-24 bg-soft-beige relative overflow-hidden">
 

@@ -85,16 +85,7 @@
           33% { transform: translate(15px, -25px) rotate(2deg); }
           66% { transform: translate(-10px, 15px) rotate(-2deg); }
         }
-        .text-outline {
-          -webkit-text-stroke: 1px currentColor;
-          color: transparent;
-        }
-        .balloon-dot {
-          @apply absolute -top-4 -right-1 w-4 h-5 bg-primary rounded-full;
-          border-bottom-right-radius: 45%;
-          border-bottom-left-radius: 45%;
-        }
-        .paper-texture {
+.paper-texture {
           background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
         }
         /* Custom scrollbar for better aesthetics */
@@ -113,15 +104,6 @@
         }
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
 </head>
 
 <body class="font-body bg-soft-beige text-slate-800 overflow-x-hidden paper-texture antialiased">

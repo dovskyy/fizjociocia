@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
-const About: React.FC = () => {
+const About = () => {
   return (
     <section id="o-mnie" className="py-16 md:py-24 lg:py-40 relative overflow-hidden">
       <div className="absolute inset-0 bg-primary/5 -z-10"></div>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { StaggerContainer, StaggerItem, AnimatedSection } from './AnimatedSection';
 
 const patientGroups = [
@@ -26,7 +25,7 @@ const patientGroups = [
   }
 ];
 
-const Patients: React.FC = () => {
+const Patients = () => {
   return (
     <section id="komu-pomagam" className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-pastel-mint/15 rounded-full blur-[100px] -z-10"></div>

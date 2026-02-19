@@ -1,15 +1,15 @@
-import React from 'react';
+import { type FC, type ReactNode } from 'react';
 import { motion, Variants } from 'framer-motion';
 
 // Reusable scroll-reveal wrapper dla całych sekcji
 interface AnimatedSectionProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
   direction?: 'up' | 'left' | 'right' | 'none';
 }
 
-export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+export const AnimatedSection: FC<AnimatedSectionProps> = ({
   children,
   className,
   delay = 0,
@@ -36,7 +36,7 @@ export const AnimatedSection: React.FC<AnimatedSectionProps> = ({
 
 // Staggered container — dzieci animują się po kolei
 interface StaggerContainerProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   staggerDelay?: number;
   initialDelay?: number;
@@ -64,7 +64,7 @@ export const itemVariants = (direction: 'up' | 'left' | 'right' = 'up'): Variant
   },
 });
 
-export const StaggerContainer: React.FC<StaggerContainerProps> = ({
+export const StaggerContainer: FC<StaggerContainerProps> = ({
   children,
   className,
   staggerDelay = 0.1,
@@ -83,12 +83,12 @@ export const StaggerContainer: React.FC<StaggerContainerProps> = ({
 
 // Pojedynczy item do użycia wewnątrz StaggerContainer
 interface StaggerItemProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   direction?: 'up' | 'left' | 'right';
 }
 
-export const StaggerItem: React.FC<StaggerItemProps> = ({ children, className, direction = 'up' }) => (
+export const StaggerItem: FC<StaggerItemProps> = ({ children, className, direction = 'up' }) => (
   <motion.div className={className} variants={itemVariants(direction)}>
     {children}
   </motion.div>

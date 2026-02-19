@@ -1,7 +1,6 @@
-import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './AnimatedSection';
 
-const Services: React.FC = () => {
+const Services = () => {
   return (
     <section id="doswiadczenie" className="py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-primary/5 -z-10"></div>

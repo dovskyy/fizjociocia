@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import { type MouseEvent, useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
+  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     // Drastically reduced movement range (dividing by 5)
     const x = (clientX - (left + width / 2)) / 5;

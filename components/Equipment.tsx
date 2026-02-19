@@ -1,4 +1,3 @@
-import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './AnimatedSection';
 
 const equipment = [
@@ -34,7 +33,7 @@ const equipment = [
   },
 ];
 
-const Equipment: React.FC = () => {
+const Equipment = () => {
   return (
     <section id="sprzet" className="py-16 md:py-24 relative">
       <div className="absolute inset-0 bg-soft-beige/40 -z-10"></div>

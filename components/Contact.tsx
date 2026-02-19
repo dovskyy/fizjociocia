@@ -1,7 +1,7 @@
-import React, { FormEvent } from 'react';
+import { type FormEvent } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 
-const Contact: React.FC = () => {
+const Contact = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     alert('Dziękujemy za wiadomość! Odpowiemy wkrótce.');

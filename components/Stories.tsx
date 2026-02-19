@@ -1,7 +1,6 @@
-import React from 'react';
 import { AnimatedSection, StaggerContainer, StaggerItem } from './AnimatedSection';
 
-const Stories: React.FC = () => {
+const Stories = () => {
   return (
     <section id="historie" className="py-16 md:py-24 relative overflow-hidden bg-soft-beige">
       <div className="absolute top-10 left-10 w-64 h-64 bg-pastel-mint/20 rounded-full blur-3xl -z-10"></div>

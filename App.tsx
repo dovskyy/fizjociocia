@@ -1,4 +1,3 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,7 +8,7 @@ import Equipment from './components/Equipment';
 import Stories from './components/Stories';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-const App: React.FC = () => {
+const App = () => {
   return (
     <main className="w-full min-h-screen">
       <Navbar />
