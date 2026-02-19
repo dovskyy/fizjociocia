@@ -16,6 +16,7 @@ const Contact: React.FC = () => {
           src="/assets/baloons.webp"
           alt=""
           aria-hidden="true"
+          loading="lazy"
           className="absolute left-1/2 -translate-x-1/2 -top-20 w-80 lg:w-96 opacity-60 floating-slow pointer-events-none select-none z-0"
         />
 
@@ -29,7 +30,7 @@ const Contact: React.FC = () => {
                   <span className="text-xs font-bold text-slate-300 uppercase tracking-widest text-center">Fizjo<br/>Ciocia<br/>Priority</span>
                 </div>
                 <div className="md:hidden absolute top-6 right-6">
-                  <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
+                  <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" loading="lazy" className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
                 </div>
 
                 <h3 className="font-handwritten text-4xl text-slate-800 mb-2">Cześć!</h3>
@@ -60,7 +61,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="hidden md:block mt-12 opacity-80">
-                  <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
+                  <img src="/assets/fizjociocia_hero_3.webp" alt="Marcelina" loading="lazy" className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md sepia-[0.3]" />
                 </div>
               </div>
 

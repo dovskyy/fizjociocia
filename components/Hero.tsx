@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
                 borderRadius: ["60% 40% 30% 70% / 60% 30% 70% 40%", "30% 60% 70% 40% / 50% 60% 30% 60%", "60% 40% 30% 70% / 60% 30% 70% 40%"]
             }}
             transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[-10%] right-[-5%] w-[45vw] h-[45vw] bg-pastel-yellow/20 mix-blend-multiply blur-[80px]"
+            className="absolute top-[-10%] right-[-5%] w-[45vw] h-[45vw] bg-pastel-yellow/20 mix-blend-multiply blur-[80px] will-change-transform"
           />
           <motion.div 
             animate={{ 
@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
                 borderRadius: ["40% 60% 70% 30% / 40% 50% 60% 50%", "60% 40% 30% 70% / 60% 30% 70% 40%", "40% 60% 70% 30% / 40% 50% 60% 50%"]
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute top-[10%] left-[-10%] w-[40vw] h-[40vw] bg-primary/15 mix-blend-multiply blur-[90px]"
+            className="absolute top-[10%] left-[-10%] w-[40vw] h-[40vw] bg-primary/15 mix-blend-multiply blur-[90px] will-change-transform"
           />
           <motion.div 
              animate={{ 
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
                 borderRadius: ["50% 50% 50% 50% / 50% 50% 50% 50%", "30% 70% 70% 30% / 30% 30% 70% 70%", "50% 50% 50% 50% / 50% 50% 50% 50%"]
             }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute -bottom-20 left-1/2 w-[50vw] h-[50vw] bg-pastel-mint/15 mix-blend-multiply blur-[100px] transform -translate-x-1/2"
+            className="absolute -bottom-20 left-1/2 w-[50vw] h-[50vw] bg-pastel-mint/15 mix-blend-multiply blur-[100px] transform -translate-x-1/2 will-change-transform"
           />
       </motion.div>
 
@@ -160,6 +160,8 @@ const Hero: React.FC = () => {
                   <img
                     src="/assets/fizjociocia_hero_3.webp"
                     alt="Marcelina Kochanowska - Fizjociocia"
+                    fetchPriority="high"
+                    decoding="async"
                     className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
                   />
                 </div>

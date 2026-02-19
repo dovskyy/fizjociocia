@@ -22,6 +22,7 @@ const Footer: React.FC = () => {
             <img
               src="/assets/fizjociocia_logo.webp"
               alt="Fizjociocia"
+              loading="lazy"
               className="h-10 md:h-12"
             />
           </motion.div>

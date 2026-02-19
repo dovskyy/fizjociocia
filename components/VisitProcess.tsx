@@ -58,6 +58,7 @@ const VisitProcess: React.FC = () => {
             src="/assets/baloon_3.webp"
             alt=""
             aria-hidden="true"
+            loading="lazy"
             className="absolute top-0 right-0 md:-right-24 lg:-right-36 w-24 md:w-28 lg:w-40 opacity-40 md:opacity-65 floating-slow pointer-events-none select-none"
           />
         </AnimatedSection>

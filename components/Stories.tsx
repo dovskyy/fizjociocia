@@ -19,6 +19,7 @@ const Stories: React.FC = () => {
                 src="/assets/baloons_teddybear.webp"
                 alt=""
                 aria-hidden="true"
+                loading="lazy"
                 className="w-36 lg:w-[19rem] opacity-60 floating-slow"
               />
             </div>
@@ -43,6 +44,7 @@ const Stories: React.FC = () => {
                   <img
                     src="/assets/fizjociocia_kid_3.webp"
                     alt="Filip"
+                    loading="lazy"
                     className="w-full h-full object-cover filter sepia-[0.2]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -74,6 +76,7 @@ const Stories: React.FC = () => {
                   <img
                     src="/assets/fizjociocia_kid.webp"
                     alt="Zosia"
+                    loading="lazy"
                     className="w-full h-full object-cover filter sepia-[0.2] scale-x-[-1]"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
