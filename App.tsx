@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 const App = () => {
   return (
     <main className="w-full min-h-screen">
-      <Navbar />
       <Hero />
       <About />
       <Patients />
