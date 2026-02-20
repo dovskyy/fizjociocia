@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
 const NAV_LINKS = [
   { label: 'O mnie', href: '#o-mnie' },
@@ -10,9 +10,25 @@ const NAV_LINKS = [
   { label: 'Kontakt', href: '#kontakt' },
 ] as const;
 
+const useIsMobile = (breakpoint = 768) => {
+  const [isMobile, setIsMobile] = useState(() =>
+    typeof window !== 'undefined' ? window.innerWidth < breakpoint : false,
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${breakpoint - 1}px)`);
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mql.addEventListener('change', onChange);
+    setIsMobile(mql.matches);
+    return () => mql.removeEventListener('change', onChange);
+  }, [breakpoint]);
+
+  return isMobile;
+};
+
 const Navbar = () => {
+  const isMobile = useIsMobile();
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
@@ -44,15 +60,10 @@ const Navbar = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
+  if (isMobile) return null;
 
   const handleClick = useCallback(
     (href: string) => {
-      setMobileOpen(false);
       const el = document.querySelector(href);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
@@ -62,7 +73,6 @@ const Navbar = () => {
   );
 
   return (
-    <>
       <nav
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 animate-navbar-slide-in ${
           scrolled
@@ -85,7 +95,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop links */}
-          <ul className="hidden md:flex items-center gap-1">
+          <ul className="flex items-center gap-1">
             {NAV_LINKS.map(({ label, href }) => {
               const isActive = activeSection === href.slice(1);
               return (
@@ -109,30 +119,6 @@ const Navbar = () => {
             })}
           </ul>
 
-          {/* Hamburger — custom drawn lines for that hand-made feel */}
-          <button
-            onClick={() => setMobileOpen((o) => !o)}
-            className="md:hidden relative z-10 w-10 h-10 flex items-center justify-center -mr-2"
-            aria-label={mobileOpen ? 'Zamknij menu' : 'Otwórz menu'}
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span
-                className={`block h-[2.5px] rounded-full bg-slate-800 transition-all duration-300 origin-center ${
-                  mobileOpen ? 'translate-y-[9px] rotate-45' : ''
-                }`}
-              />
-              <span
-                className={`block h-[2.5px] rounded-full bg-slate-800 transition-all duration-300 ${
-                  mobileOpen ? 'opacity-0 scale-x-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-[2.5px] rounded-full bg-slate-800 transition-all duration-300 origin-center ${
-                  mobileOpen ? '-translate-y-[9px] -rotate-45' : ''
-                }`}
-              />
-            </div>
-          </button>
         </div>
 
         {/* Progress Bar */}
@@ -141,58 +127,6 @@ const Navbar = () => {
           style={{ scaleX }}
         />
       </nav>
-
-      {/* Mobile overlay */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-soft-beige/95 backdrop-blur-lg flex flex-col items-center justify-center"
-          >
-            {/* Decorative blobs in background */}
-            <div className="absolute top-10 right-10 w-48 h-48 bg-pastel-yellow/30 rounded-full blur-3xl" />
-            <div className="absolute bottom-20 left-10 w-56 h-56 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-pastel-mint/20 rounded-full blur-3xl" />
-
-            <nav className="relative z-10">
-              <ul className="flex flex-col items-center gap-6">
-                {NAV_LINKS.map(({ label, href }, i) => (
-                  <motion.li
-                    key={href}
-                    initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    exit={{ opacity: 0, y: -12 }}
-                    transition={{ delay: i * 0.06, duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  >
-                    <a
-                      href={href}
-                      onClick={(e) => { e.preventDefault(); handleClick(href); }}
-                      className="text-2xl font-display font-bold text-slate-800 hover:text-primary transition-colors tracking-tight"
-                    >
-                      {label}
-                    </a>
-                  </motion.li>
-                ))}
-              </ul>
-            </nav>
-
-            {/* Subtle bottom tagline */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="absolute bottom-10 text-xs tracking-[0.25em] uppercase text-slate-400 font-body"
-            >
-              Fizjoterapia pediatryczna
-            </motion.p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
   );
 };
 
