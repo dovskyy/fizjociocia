@@ -17,7 +17,6 @@ const App = () => {
       <Patients />
       <Services />
       <VisitProcess />
-      <Equipment />
       <Stories />
       <Contact />
       <Footer />

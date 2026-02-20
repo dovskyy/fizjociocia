@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 
 const NAV_LINKS = [
   { label: 'O mnie', href: '#o-mnie' },
@@ -14,6 +14,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -61,11 +63,8 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
+      <nav
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 animate-navbar-slide-in ${
           scrolled
             ? 'bg-white/70 backdrop-blur-xl shadow-[0_2px_20px_rgba(255,204,203,0.15)]'
             : 'bg-transparent'
@@ -135,7 +134,13 @@ const Navbar = () => {
             </div>
           </button>
         </div>
-      </motion.nav>
+
+        {/* Progress Bar */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-pastel-blue via-primary to-pastel-yellow origin-left"
+          style={{ scaleX }}
+        />
+      </nav>
 
       {/* Mobile overlay */}
       <AnimatePresence>
